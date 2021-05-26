@@ -33,3 +33,9 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>("bootBuildImage") {
+	//builder   = "gcr.io/buildpacks/builder"
+	builder   = "a2ito/my-builder:bionic"
+	imageName = "spring-boot-doker/imagebybuildpacks"
+}
