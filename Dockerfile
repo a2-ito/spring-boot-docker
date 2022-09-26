@@ -21,5 +21,6 @@ USER spring:spring
 
 WORKDIR /app
 COPY --from=builder /app/build/libs/spring-boot-docker-0.0.1-SNAPSHOT.jar .
-ENTRYPOINT ["java","-jar","spring-boot-docker-0.0.1-SNAPSHOT.jar"]
+#ENTRYPOINT ["java","-jar","spring-boot-docker-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","spring-boot-docker-0.0.1-SNAPSHOT.jar","-Dorg.apache.coyote.http11.Http11Protocol.MAX_KEEP_ALIVE_REQUESTS=1"]
 

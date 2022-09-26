@@ -9,3 +9,4 @@ class SpringBootDockerApplication
 fun main(args: Array<String>) {
 	runApplication<SpringBootDockerApplication>(*args)
 }
+
